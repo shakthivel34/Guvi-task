@@ -79,11 +79,11 @@ app.post('/login', async (req, res) => {
 app.post('/api/user-details/:user', async (req, res) => {
     const { user } = req.params;
     const { age, dob, contact, gender, nationality, address } = req.body;
-    console.log('Received request for user:', user);
+   
 
     try {
-        // Check if the user with the provided username exists in the database
-        console.log('Executing query:', `SELECT * FROM login WHERE user = $1`, [user]);
+        
+      
         const userExists = await db.query(
             'SELECT * FROM login WHERE "user" = $1',
             [user]
@@ -94,8 +94,7 @@ app.post('/api/user-details/:user', async (req, res) => {
             return res.status(404).json({ error: 'User not found' });
         }
 
-        // Update user details in the database
-        const result = await db.query(
+       const result = await db.query(
             `UPDATE login
              SET age = $2, dob = $3, contact = $4, gender = $5, nationality = $6, address = $7
              WHERE "user" = $1
@@ -116,7 +115,6 @@ app.get('/api/user-details/:user', async (req, res) => {
     console.log('Received request to fetch user details for:', user);
 
     try {
-        // Check if the user with the provided username exists in the database
         const userExists = await db.query(
             'SELECT * FROM login WHERE "user" = $1',
             [user]
@@ -126,9 +124,7 @@ app.get('/api/user-details/:user', async (req, res) => {
             return res.status(404).json({ error: 'User not found' });
         }
 
-        // Extract user details from the query result
         const userDetails = {
-            
             age: userExists.rows[0].age,
             dob: userExists.rows[0].dob,
             contact: userExists.rows[0].contact,

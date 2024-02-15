@@ -12,7 +12,7 @@ const SignupPage = () => {
   const navigate = useNavigate(); 
 
   const handleSignup = async () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression for basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
 
   if (!emailRegex.test(email)) {
     setError('Please enter a valid email address.');
@@ -20,7 +20,7 @@ const SignupPage = () => {
   }
     if ( username && password && password === confirmPassword) {
       try {
-        await axios.post('http://localhost:6006/sign', { 
+        await axios.post('http://13.126.48.93/sign', { 
           email,
           user: username,
           password,
@@ -59,6 +59,8 @@ const SignupPage = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className='emailbox'
+          placeholder='Enter valid ID'
+          style={{ fontSize: '15px' }}
         />
       </div>
       <div className="usernamegroup">
@@ -68,6 +70,8 @@ const SignupPage = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           className='usernamebox'
+          placeholder='Enter your username'
+          style={{ fontSize: '14px' }}
         />
       </div>
       <div className="passwordgroup">
@@ -77,15 +81,20 @@ const SignupPage = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className='passwordbox'
+          placeholder='Enter strong password'
+          style={{ fontSize: '14px' }}
+
         />
       </div>
-      <div className="passwordgroup">
-        <label className='passwordtext'>Confirm Password:</label>
+      <div className="confirmpasswordgroup">
+        <label className='confirmtext'>Re-enter:</label>
         <input
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-          className='passwordbox'
+          className='confirmpasswordbox'
+          placeholder='Re-enter password'
+          style={{ fontSize: '14px' }}
         />
       </div>
       <div className="button-group">

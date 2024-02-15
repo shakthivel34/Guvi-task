@@ -1,14 +1,26 @@
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 5000px;
+    margin:  auto;
     padding-top: 0%;
-    padding-left: 30px;
-    padding-right: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
     padding-bottom: 30px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #f9f9f958;
+    position: relative;
   }
+  .welcome{
+    font-size: 2rem;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-decoration: underline;
+  }
+  
   
   .form-group {
     margin-bottom: 20px;
@@ -19,25 +31,24 @@
     font-weight: bold;
   }
   
-  input[type="number"],
-  input[type="date"],
-  input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
   
-  .btn-submit {
+  
+ 
+  
+  .edit {
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 5px 10px;
     cursor: pointer;
+    margin-left: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
   
-  .btn-submit:hover {
+  .edit:hover {
     background-color: #0056b3;
   }
   
@@ -54,4 +65,97 @@
   border: none;
   outline: none;
   background-color: transparent;
+}
+.agegroup{
+  display: flex;
+  padding-bottom: 15px;
+}
+
+.agebox
+{
+  margin-left: 10px;
+  width: 17%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.dobgroup{
+  display: flex;
+  margin-right:70px;
+  padding-bottom: 15px;
+  
+}
+.dobbox{
+  width: 100%;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.agetxt{
+  
+  margin-left: 10px;
+}
+.contactgroup{
+  display: flex;
+  margin-left:-14px;
+  padding-bottom: 15px;
+}
+.contactbox{
+  
+  width: 35%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.contacttxt{
+ 
+ margin-right:8px;
+ position: relative;
+ padding-right: px;
+}
+
+.gendergroup{
+  display: flex;
+  margin-left: -10px;
+  padding-bottom: 15px;
+}
+
+.genderbox{
+  margin-left: 10px;
+}
+.national{
+  display: flex;
+  margin-left: -38px;
+  padding-bottom: 15px;
+}
+.nationalbox{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 10px;
+  width: 100px;
+
+}
+.address{
+  display: flex;
+  margin-left: -13px;
+  padding-bottom: 15px;
+}
+.addressbox{
+  margin-left: 10px;
+  width: 225px;
+  padding-bottom: 15px;
+}
+
+.submit{
+  background-color: #0ca418;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 10px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+.submit:hover{
+  background-color: #155724;
 }

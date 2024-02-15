@@ -20,7 +20,7 @@ const Home = () => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:6006/api/user-details/${username}`);
+        const response = await axios.get(`http://13.126.48.93/api/user-details/${username}`);
         const userData = response.data;
         if (userData) {
           setAge(userData.age || '');
@@ -46,7 +46,7 @@ const Home = () => {
     e.preventDefault();
     
     try {
-      const response = await axios.post(`http://localhost:6006/api/user-details/${username}`, {
+      const response = await axios.post(`http://13.126.48.93/api/user-details/${username}`, {
         age,
         dob,
         contact,
@@ -71,49 +71,51 @@ const Home = () => {
 
   return (
     <div>
-      <h1>WELCOME! {username}</h1>
+      <h1 className='welcome'>Welcome {username}!</h1>
       <div className="container">
-        <h2>Add Personal Details</h2>
-        <button type="button" className="btn-submit" onClick={handleEdit} disabled={isEditMode}>
-            Edit
+        <h2>Additional Details</h2>
+        <button type="button" className="edit" onClick={handleEdit} disabled={isEditMode}>
+           Edit
           </button>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Age:</label>
-            <input
-              type="number"
+          <div className="agegroup">
+            <label className='agetxt'>Age:</label>
+            <input 
+             type='number'
               value={age}
               onChange={(e) => setAge(e.target.value)}
               required
               disabled={!isEditMode}
+              className='agebox'
               
             />
           </div>
-          <div className="form-group">
-            <label>Date of Birth:</label>
+          <div className="dobgroup">
+            <label>D.O.B:</label>
             <input
               type="date"
               value={dob}
               onChange={(e) => setDob(e.target.value)}
               required
               disabled={!isEditMode}
+              className='dobbox'
               
             />
           </div>
-          <div className="form-group">
-            <label>Contact:</label>
+          <div className="contactgroup">
+            <label className='contacttxt'>Contact:</label>
             <input
-              type="text"
+              
               value={contact}
               onChange={(e) => setContact(e.target.value)}
               required
               disabled={!isEditMode}
-             
+              className='contactbox'
             />
           </div>
-          <div className="form-group">
+          <div className="gendergroup">
             <label>Gender:</label>
-            <select
+            <select className='genderbox'
               value={gender}
               onChange={(e) => setGender(e.target.value)}
               required
@@ -126,9 +128,9 @@ const Home = () => {
               <option value="other">Other</option>
             </select>
           </div>
-          <div className="form-group">
+          <div className="national">
             <label>Nationality:</label>
-            <input
+            <input className='nationalbox'
               type="text"
               value={nationality}
               onChange={(e) => setNationality(e.target.value)}
@@ -137,9 +139,9 @@ const Home = () => {
               
             />
           </div>
-          <div className="form-group">
+          <div className="address">
             <label>Address:</label>
-            <textarea
+            <textarea className='addressbox'
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               required
@@ -147,8 +149,8 @@ const Home = () => {
              
             />
           </div>
-          <button type="submit" className="btn-submit">
-            submit
+          <button type="submit" className="submit">
+            Submit
           </button>
           
         </form>

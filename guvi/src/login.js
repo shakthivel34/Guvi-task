@@ -13,7 +13,7 @@ const LoginPage = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:6006/login', { 
+      const response = await axios.post('http://13.126.48.93/login', { 
         email,
         password,
       });
@@ -33,6 +33,7 @@ const LoginPage = () => {
   };
 
   return (
+    
     <div className="login-container">
       <h2>Login</h2>
       {error && <p className="error-message">{error}</p>}
@@ -69,6 +70,7 @@ const LoginPage = () => {
         <p className='acctext'>Doesn't have an account ? <button className="btnsign" onClick={handleSignup}>Sign Up</button></p>
       </div>
     </div>
+    
   );
 };
 

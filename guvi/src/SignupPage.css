@@ -1,10 +1,12 @@
 .signup-container {
-  max-width: 400px;
+  max-width: 1000px;
   margin: 50px auto;
   padding: 20px;
+  padding-right:40px;
+  padding-left: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: #f9f9f95e,
 }
 
 body {
@@ -13,21 +15,20 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+
 }
 
 .error-message {
   color: red;
 }
 
-.emailgroup,
-.passwordgroup {
+.emailgroup {
   margin-bottom: 20px;
 }
 
-.emailbox,
-.passwordbox {
-  width: 60%;
-  padding: 5px;
+.emailbox {
+ width: 60px;
+ padding: 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
   font-size: 16px;
@@ -67,14 +68,16 @@ body {
 
 .usernamegroup {
     margin-bottom: 20px;
+    display: flex;
   }
   
   .usernamebox {
     width: 60%;
-    padding: 5px;
+    margin-left: 7px;
     border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 16px;
+    padding-top: 10px;
   }
   
   .usernametext {
@@ -82,4 +85,38 @@ body {
     font-weight: bold;
     color: #333;
     margin-bottom: 5px;
+  }
+
+  .passwordbox {
+    width: 60%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    
+  }
+  .passwordgroup {
+    margin-bottom: 20px;
+    padding-left: 5px;
+  }
+
+  .confirmpasswordgroup{
+    display: flex;
+    padding-bottom: 20px;
+  }
+
+  .confirmtext{
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
+  .confirmpasswordbox{
+    width: 55%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-left: 10px;
   }

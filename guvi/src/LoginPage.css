@@ -1,11 +1,4 @@
-.login-container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
+
 
 body {
   display: flex;
@@ -13,6 +6,25 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  background-image: url('/src/image/pexels-andreea-ch-1166644.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.login-container {
+  max-width: 10000px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #1c161600;
 }
 
 .error-message {
@@ -59,7 +71,7 @@ body {
   font-size: 18px;
   font-weight: bold;
   color: #333;
-  padding-right: 10px; /* Adjusted */
+  padding-right: 10px; 
 }
 
 .btnlogin {
